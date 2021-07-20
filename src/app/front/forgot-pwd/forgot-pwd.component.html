@@ -1,0 +1,38 @@
+<section class="u-align-center u-clearfix u-palette-5-light-3 u-section-1" id="carousel_f97f">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card">
+            <div class="p-3 border-bottom d-flex align-items-center justify-content-center">
+                <h5>Forgot Password?</h5>
+            </div>
+            <div class="p-3 px-4 py-4 border-bottom">
+                <form #forgot_pwd = "ngForm" (ngSubmit)="doForgotPwd(forgot_pwd)">
+                    <div [className]='msgClass'  role="alert" *ngIf="msg!=''">
+                        {{msg}}
+                      </div>
+                    <div class="form">
+                    <input type="email" class="form-control" value="" name="email" ngModel id="myInput" placeholder="Email" required />
+                    <br>
+                    <input type="password" class="form-control" name="password" value="" ngModel id="myInput" placeholder="New Password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        required />
+                    <br>
+                    <input type="password" class="form-control" value="" ngModel id="myInput" placeholder="Repeat Password" name="repassword"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        required />
+
+
+                </div> <button class="btn btn-danger btn-block continue">submit</button>
+                <div class="p-3 d-flex flex-row justify-content-center align-items-center member">
+                    <span>Now Login >>>
+                    </span> <a routerLink="/login" class="text-decoration-none ml-2">Login here</a>
+                  </div>
+            </form>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>

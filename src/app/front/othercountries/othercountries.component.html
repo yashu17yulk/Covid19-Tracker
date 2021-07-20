@@ -1,0 +1,49 @@
+<section class="u-align-center u-clearfix u-section-1" id="sec-5351">
+  <div class="jumbotron bg-white text-center">
+    <h1 class="display-4"> COUNTRIES WISE STATUS</h1>
+    <hr>
+    <div class="mx-auto">
+        <div class="form-group col-lg-5 mx-auto">
+            <label for="c">Select Country</label>
+            <select name="" class="form-control con" id="c" #input (change)='updateValues(input.value)'>
+            <option value="{{con}}" *ngFor='let con of countries'>{{con}}</option>
+        </select>
+        </div>
+    </div>
+     <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive'
+     [totalRecovered]='totalRecovered' [totalDeaths]='totalDeaths'>
+    </app-dashboard-card> 
+
+    <h1>Active cases</h1>
+    <div class=" container-fluid">
+<div class="row">
+        <div class="col">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sno.</th>
+                        <th>Date</th>
+                        <th>Cases</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor='let cs of selectedCountryData; index as i '>
+                        <td>{{i+1}}</td>
+                        <td>{{cs.date | date}}</td>
+                        <td>{{cs.cases}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div></div>
+        <div class="col">
+            <google-chart></google-chart>
+        </div>
+
+
+    </div>
+
+
+</div>
+</section>

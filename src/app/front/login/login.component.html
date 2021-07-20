@@ -1,0 +1,25 @@
+<section class="u-align-center u-clearfix u-palette-5-light-3 u-section-1" id="carousel_f97f">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="card">
+      <div class="p-3 border-bottom d-flex align-items-center justify-content-center">
+        <h5>Login</h5>
+      </div>
+      <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
+        <div class="p-3 px-4 py-4 border-bottom">
+          <input type="text" class="form-control mb-2" ngModel name="uname" placeholder="Email/Username" />
+          <div class="form"> 
+            <input type="password" class="form-control" ngModel name="password" placeholder="Password" />
+            <a  routerLink="/forgotpwd">Forgot?</a>
+          </div> <button class="btn btn-danger btn-block continue">Continue</button>
+          
+        </div>
+        <div class="p-3 d-flex flex-row justify-content-center align-items-center member"> <span>Not a member? </span>
+          <a routerLink="/signup" class="text-decoration-none ml-2">SignUP</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  
+</section>

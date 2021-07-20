@@ -1,0 +1,82 @@
+<section class="u-align-center u-clearfix u-section-1" id="sec-bf57">
+  <div class='container'><br> <h1>Total Cases in INDIA</h1>
+
+
+    <div class="row">  
+      <div class="card col p-3 m-3">
+    <div class="ui statistic">
+        <div class="label">
+          <h5  style="color:grey;">Total Confirmed</h5>
+          <b class="value">{{ttl_confirmedCases}}</b>
+   
+        </div>
+      </div>
+    </div>
+     <div class="card col p-3 m-3">
+    <div class="ui statistic">
+        <div class="label">
+          <h5 style="color:green;">Total Deceased</h5>
+            <b class='value'>{{ttl_deathCases}}</b>
+       
+        </div>
+      </div>
+    </div>
+     <div class="card col p-3 m-3">
+    <div class="ui statistic">
+         <div class="label">
+          <h5  style="color:red;">Total Recovered</h5>
+          <b class="value">{{ttl_recovrCases}}</b>
+
+             </div>
+             </div>
+              </div>
+    <div class="card col p-3 m-3">
+    <div class="ui statistic">
+        <div class="label">
+          <h5 style="color:blue;">Total Vaccinated</h5> 
+          <b class="value">{{ttl_vaccCases}}</b>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+      
+     
+
+
+
+
+    <h3>State wise Data</h3>
+    <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">State</th>
+        <th scope="col">Confirmed</th>
+        <th scope="col">DeathCases</th>
+        <th scope="col">Recovered</th>
+        <th scope="col">Tested</th>
+        <th scope="col">vaccinated1</th>
+        <th scope="col">vaccinated2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let x of stateSummaryData; let i=index;">
+      
+        <th scope="row ">{{i+1}}</th>
+        <td>{{x.state}}</td>
+        <td>{{x.total.confirmed}}</td>
+        <td>{{x.total.deceased}}</td>
+        <td>{{x.total.recovered}}</td>
+        <td>{{x.total.tested}}</td>
+        <td>{{x.total.vaccinated1}}</td>
+        <td>{{x.total.vaccinated2}}</td>
+      </tr>
+       
+    </tbody>
+  </table>
+  </div>
+  </section>
+  

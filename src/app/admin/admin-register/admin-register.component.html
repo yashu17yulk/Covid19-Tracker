@@ -1,0 +1,52 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-5 p-b-10">
+            <form class="login100-form validate-form" #regForm="ngForm" (ngSubmit)="doRegister(regForm)">
+                <span class="login100-form-title p-b-70">
+                    Register
+                </span>
+
+               <span class="login100-form-avatar">
+                    <img src="../../../assets/admin/login/images/avatar-01.jpg" alt="AVATAR">
+                </span>
+
+                <div [className]='msgClass' role="alert" *ngIf="msg!=''">
+                    {{msg}}
+                </div>
+
+                <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
+                    <label>Username:</label>
+                    <input class="input100" type="text" name="uname" ngModel required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter Name">
+                    <label>Name:</label>
+                    <input class="input100" type="text" name="name" ngModel required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+                    <label>Password:</label>
+                    <input class="input100" type="password" name="password" ngModel required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter Email">
+                    <label>Email:</label>
+                    <input class="input100" type="email" name="email" ngModel required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button [disabled]="!regForm.valid" type="submit" class="login100-form-btn">Register</button>
+                    <span>If you have already account - <a routerLink='/admin/login'> Login here</a></span>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>

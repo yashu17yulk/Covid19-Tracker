@@ -1,0 +1,41 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-85 p-b-20">
+            <form  method="POST" #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)" class="login100-form validate-form">
+                <span class="login100-form-title p-b-70">
+                   Admin Login
+                </span>
+                <span class="login100-form-avatar">
+                    <img src="../../../assets/admin/login/images/avatar-01.jpg" alt="AVATAR">
+                </span>
+                <div class="alert alert-danger" role="alert" *ngIf="msg!=''">
+                    {{msg}}
+                  </div>
+
+                <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
+                    <label>Username:</label>
+                    <input class="input100" type="text" name="uname" ngModel>
+                    <span class="focus-input100"></span>
+                 
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+                    <label>Password:</label>
+                    <input class="input100" type="password" name="password" ngModel>
+                    <span class="focus-input100"></span>
+                  
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button [disabled]="!loginForm.valid" type="submit" class="login100-form-btn">Login</button>
+                    <span>Do want to create a new Account?<a routerLink='/admin/register'> Register here</a></span>
+                </div>
+
+                 
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>

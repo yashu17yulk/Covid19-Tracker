@@ -1,0 +1,62 @@
+<div class='wrapper'>
+    <app-leftside></app-leftside>
+    <div class="main-panel bg-white">
+    <div class='container'>
+
+
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">S.No</th>
+    <th scope="col">name</th>
+    <th scope="col">contact</th>
+    <th scope="col">address</th>
+  </tr>
+</thead>
+<tbody>
+ <tr *ngFor = "let x of inqlist ; let i = index "  >
+    <th scope="row">{{i+1}}</th>
+    <td>{{x.name}}</td>
+    <td>{{x.contact}}</td>
+    <td>{{x.address}}</td>
+
+<td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)='edit(x)'>update</button>&nbsp;<button (click)='deleteid(x.contact)' class="btn btn-primary">delete</button></td>
+       </tr> 
+</tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Update form</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form #upFrom="ngForm" (ngSubmit)="update()">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">name</label> 
+                <input type="text" class="form-control" #name [(ngModel)]='Details.name' id="exampleFormControlInput1" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">contact</label>
+                <input type="text" class="form-control" #contact [(ngModel)]='Details.contact' id="exampleFormControlInput1" name="contact" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">address</label>
+                <input type="text" class="form-control" #address [(ngModel)]='Details.address' id="exampleFormControlInput1" name="address" required>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit" value='update'>Update</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</div></div>
+</div>

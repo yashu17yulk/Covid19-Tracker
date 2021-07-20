@@ -1,0 +1,34 @@
+<section class="u-align-center u-clearfix u-palette-5-light-3 u-section-1" id="carousel_f97f">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="card">
+      <div class="p-3 border-bottom d-flex align-items-center justify-content-center">
+        <h5>CREATE ACCOUNT</h5>
+      </div>
+      <form class="login100-form validate-form" #regForm="ngForm" (ngSubmit)="doRegister(regForm)">
+        <div [className]='msgClass'  role="alert" *ngIf="msg!=''">
+          {{msg}}
+        </div>
+        <div class="p-3 px-4 py-4 border-bottom">
+          <input type="text" ngModel class="form-control mb-2" name="uname" required placeholder="Username" />
+          <input type="text" ngModel class="form-control mb-2" name="name" required placeholder="Name" />
+
+          <input type="text" ngModel class="form-control mb-2" name="email" required placeholder="Email" />
+
+
+          <input type="password" ngModel class="form-control mb-2" value="" name="password" ngModel required
+            id="myInput" placeholder="Password" />
+
+          <input type="password" class="form-control mb-2" value="" name="repwd" required id="myInput"
+            placeholder="Repeat Password" />
+
+
+          <button [disabled]="!regForm.valid" class="btn btn-danger btn-block continue">Signup</button>
+        </div>
+      </form>
+      <div class="p-3 d-flex flex-row justify-content-center align-items-center member">
+        <span>Have already an account ?
+        </span> <a routerLink="/login" class="text-decoration-none ml-2">Login here</a>
+      </div>
+    </div>
+  </div>
+</section>
